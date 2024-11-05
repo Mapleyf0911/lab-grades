@@ -139,4 +139,12 @@ avg_grades |> ggplot(aes(x = `Vedic Philosophy and Spirituality`, y = `Yoga and 
         size = "Another Variable", 
         title = "Comparison of Average Grades")
 ```
+# Q14
+```{r}
+correlation_by_group <- avg_grades |> 
+  group_by(group) |>
+  summarise(correlation = cor(`Martial Arts and Self-Defense`, `History and Civilization of India`, use = "complete.obs"))
+correlation_by_group |> 
+  slice(1:10)
+```
 
