@@ -92,4 +92,14 @@ summary_stats <- student_grades |>
   median = median(num_grades)
 )
 ```
+# Q9
+```{r}
+architecture_grades <- grades |>
+  filter(course == "Architecture and Sculpture") |>
+  group_by(id, group) |>
+  summarise(num_grades = n())
+architecture_grades |> 
+  slice_head(n = 5) |> 
+  knitr::kable()
+```
 
