@@ -32,6 +32,12 @@ grades |>
   distinct(id) |>
   nrow()
 ```
-
+# Q4
+```{r}
+students <- grades |>
+  distinct(id, group)
+students |>
+  slice(1:10)
+```
 
 
