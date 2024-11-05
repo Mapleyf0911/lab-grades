@@ -26,6 +26,12 @@ grades <- vroom(here("data", "grades.csv"))
 | The data set contains | `r NROW(grades)` | grades |
 
 
+# Q3
+```{r}
+grades |>
+  distinct(id) |>
+  nrow()
+```
 
 
 
