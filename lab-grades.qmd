@@ -20,5 +20,12 @@ theme_set(theme_bw())
 #| message: false
 grades <- vroom(here("data", "grades.csv"))
 ```
+# Q2
+|                        |                 |        |
+|------------------------|-----------------|--------|
+| The data set contains | `r NROW(grades)` | grades |
+
+
+
 
 
