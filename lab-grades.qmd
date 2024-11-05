@@ -118,3 +118,16 @@ ggplot(architecture_grades, aes(x = num_grades)) +
   facet_wrap(vars(group))
 ```
 
+# Q12
+```{r}
+avg_grades <- grades |> 
+  group_by(id, group, course) |>
+  summarise(avg_grade = round(mean(grade, na.rm = TRUE), 2)) |>
+  pivot_wider(names_from = course, values_from = avg_grade)
+
+avg_grades |> 
+  select(id, group, `Architecture and Sculpture`, `Astrology and Astrology`) |> 
+  slice_head(n = 5) |> 
+  knitr::kable()
+```
+
