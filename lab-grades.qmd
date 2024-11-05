@@ -127,7 +127,16 @@ avg_grades <- grades |>
 
 avg_grades |> 
   select(id, group, `Architecture and Sculpture`, `Astrology and Astrology`) |> 
-  slice_head(n = 5) |> 
-  knitr::kable()
+  slice_head(n = 5)
+```
+# Q13
+```{r}
+avg_grades |> ggplot(aes(x = `Vedic Philosophy and Spirituality`, y = `Yoga and Meditation`)) +
+  geom_point(alpha = 0.5) +
+  scale_size_continuous(range = c(1, 20)) +
+  labs(x = "Average Grade in Vedic Philosophy and Spirituality", 
+        y = "Average Grade in Yoga and Meditation", 
+        size = "Another Variable", 
+        title = "Comparison of Average Grades")
 ```
 
