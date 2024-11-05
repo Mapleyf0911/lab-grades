@@ -102,4 +102,13 @@ architecture_grades |>
   slice_head(n = 5) |> 
   knitr::kable()
 ```
+# Q10
+```{r}
+arch_distribution <- architecture_grades |>
+  count(num_grades) |>
+  ggplot(aes(x = factor(num_grades), y = n)) +
+  geom_col() +
+  labs(x = "Number of Grades", y = "Number of Students", title = "Distribution of Grades in Architecture and Sculpture")
+arch_distribution
+```
 
