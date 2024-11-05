@@ -111,4 +111,10 @@ arch_distribution <- architecture_grades |>
   labs(x = "Number of Grades", y = "Number of Students", title = "Distribution of Grades in Architecture and Sculpture")
 arch_distribution
 ```
+# Q11
+```{r}
+ggplot(architecture_grades, aes(x = num_grades)) +
+  geom_density() +
+  facet_wrap(vars(group))
+```
 
