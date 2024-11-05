@@ -147,4 +147,17 @@ correlation_by_group <- avg_grades |>
 correlation_by_group |> 
   slice(1:10)
 ```
+# Q15
+```{r}
+highest_corr_group <- correlation_by_group |>
+  arrange(desc(abs(correlation))) |> 
+  slice(1) |> pull(group)
+
+avg_grades |> 
+  filter(group == highest_corr_group) |>
+  ggplot(aes(x = `Martial Arts and Self-Defense`, y = `History and Civilization of India`)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "red") +
+  labs(title = paste("Martial Arts and Self-Defense vs. History and Civilization of India (Group", highest_corr_group, ")"))
+```
 
