@@ -1,0 +1,24 @@
+---
+title: "lab-grades"
+author: "JIANG Yufeng"
+format: html
+---
+
+```{r}
+#| message: false
+here::i_am("lab-grades.Rproj")
+library(here)
+library(vroom)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+theme_set(theme_bw())
+```
+
+# Q1
+```{r}
+#| message: false
+grades <- vroom(here("data", "grades.csv"))
+```
+
+
