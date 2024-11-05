@@ -62,4 +62,14 @@ ggplot(grouped_avg_grades, aes(x = group, y = avg_grade)) +
        x = "Group",
        y = "Average Grade")
 ```
+# Q7
+```{r}
+grades |>
+  select(semester, grade) |>
+  group_by(semester)
+
+ggplot(grades, aes(x = grade)) +
+  geom_density() +
+  facet_wrap(vars(semester))
+```
 
