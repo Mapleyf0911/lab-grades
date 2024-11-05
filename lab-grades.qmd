@@ -73,3 +73,23 @@ ggplot(grades, aes(x = grade)) +
   facet_wrap(vars(semester))
 ```
 
+# Q8
+```{r}
+student_grades <- grades |> 
+  group_by(id, group) |>
+  summarise(num_grades = n()) |>
+  arrange(id)
+
+student_grades |> 
+  slice_head(n = 5) |> 
+  knitr::kable()
+
+summary_stats <- student_grades |> 
+  summarise(
+  min = min(num_grades), 
+  max = max(num_grades),
+  mean = mean(num_grades),
+  median = median(num_grades)
+)
+```
+
